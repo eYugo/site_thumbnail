@@ -3,16 +3,6 @@ from django.db import models
 from .models import Thumbnail, Vote, Post
 
 
-class VoteForm(forms.ModelForm):
-
-    thumbnail = forms.ModelChoiceField(
-        label='Escolha uma thumbnail', widget=forms.Select, queryset=Thumbnail.objects.all())
-
-    class Meta:
-        model = Vote
-        fields = ('thumbnail',)
-
-
 class PostCreateForm(forms.ModelForm):
     class Meta:
         model = Post

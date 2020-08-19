@@ -31,9 +31,3 @@ class Thumbnail(models.Model):
 
     def __str__(self):
         return self.titulo
-
-
-class Vote(models.Model):
-    autor = models.ForeignKey(User, on_delete=models.CASCADE)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    Thumbnail = models.ForeignKey(Thumbnail, on_delete=models.CASCADE)
