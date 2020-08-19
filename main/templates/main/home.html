@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+{% block content %}
+<div>
+    <div class="text-center p-4 bg- rounded quicksand">
+        <h1 class="h1-home">VThumb</h1>
+        <p class="p1-home">Find out the best thumbnail for your video.<br>Create custom thumbnail polls with live
+            results.</p>
+        <a href="{% url 'register' %}" class="mx-auto btn btn-info btn-lg mt-4 pl-5 pr-5">Sign
+            up</a>
+    </div>
+</div>
+<div class="row text-center pt-4 quicksand">
+    <div class="col">
+        <img class="card-img-top img-height" src="../../../media/social_media.png" alt="Card image cap">
+        <h3>Share on Social Media</h3>
+    </div>
+    <div class="col">
+        <img class="card-img-top img-height" src="../../../media/raio.png" alt="Card image cap">
+        <h3>Live Results</h3>
+    </div>
+    <div class="col">
+        <img class="card-img-top img-height" src="../../../media/chart.png" alt="Card image cap">
+        <h3>Increase your views</h3>
+    </div>
+</div>
+{% endblock content %}

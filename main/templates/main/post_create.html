@@ -1,0 +1,47 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="bg-light">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Add a thumbnail</legend>
+            {{ t_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit" name="thumbnail">Send</button>
+        </div>
+    </form>
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+                {% for thumb in thumbnails %}
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="{{ thumb.imagem.url }}" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">{{ thumb.titulo }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href='{% url 'thumb-delete' thumb.id %}'
+                                    class="btn btn-sm btn-outline-danger ">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Create a Post</legend>
+            {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit" name="post">Post</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

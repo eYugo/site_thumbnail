@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+{% block content %}
+<div class="content-section text-center">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Vote Confirmation</legend>
+            <h2>Are you sure you want to vote on this thumbnail?</h2>
+        </fieldset>
+        <div class="card mx-auto mb-4" style=" width: 30rem;">
+            <img src="{{ thumb.imagem.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">{{thumb.titulo}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-outline-info btn-md pl-4 pr-4" type="submit">Yes</button>
+            <a class="btn btn-outline-danger" href="{% url 'post' thumb.post.id %}">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock content %}

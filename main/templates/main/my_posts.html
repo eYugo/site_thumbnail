@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+{% block content %}
+{% for post in posts %}
+<div class="container ">
+    <article class="media content-section row align-items-center">
+        <div class="col media-body">
+            <h2><a class="article-title text-info" href="{% url 'post' post.id %}">{{ post.titulo }}</a></h2>
+            <p class="article-content">{{ post.descricao }}</p>
+            <small class="text-muted">{{ post.data|date:"d F, Y" }}</small>
+            <div class="">
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' post.id %}">Delete</a>
+            </div>
+        </div>
+        <div class="col text-center">
+            {% for k, v in dict.items %}
+            {% if k == post.id %}
+            {% for thumb in v %}
+            <img src="{{ thumb.imagem.url }}" alt="..." class=" rounded img-size-100px m-1">
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+            {% if post.autor == user %}
+        </div>
+        {% endif %}
+    </article>
+</div>
+{% endfor %}
+{% endblock content %}

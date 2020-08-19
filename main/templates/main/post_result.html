@@ -1,0 +1,31 @@
+{% extends "main/base.html" %}
+{% block content %}
+<div class="">
+
+    <legend class="border-bottom mb-4 text-center">
+        <h2>Result:</h2>
+    </legend>
+    <div class="row">
+        {% for thumb in thumbnails %}
+        <div class="col-md-4 mx-auto">
+            <div class="card mb-4 box-shadow ">
+                <!--<div class="card-header ">
+                    <h3 class="card-text text-center">#1</h3>
+                </div>-->
+                <img class="card-img-top" src="{{ thumb.imagem.url }}" alt="Card image cap">
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <img class=" rounded-circle article-img" src="{{ post.autor.profile.image.url }}">
+                        <p class="card-text roboto">{{ thumb.titulo }}</p>
+                    </div>
+                    <h4 class="card-text">Número de votos: {{ thumb.num_votos }}</h4>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="text-center">
+        <a class="btn btn-outline-secondary btn-lg m-4 pl-4 pr-4" href="{% url 'post' post.id %}">Go back</a>
+    </div>
+</div>
+{% endblock content %}

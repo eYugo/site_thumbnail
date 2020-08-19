@@ -1,0 +1,38 @@
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+
+
+body{
+  height: 100vh;
+}
+.roboto{
+  font-family: 'Roboto';
+  font-weight: bolder;
+}
+.wh{
+  color: whitesmoke;
+}
+.article-img {
+  height: 50px;
+  width: 50px;
+  margin-right: 16px;
+}
+.img-size-100px{
+  width: 130px;
+}
+.quicksand{
+  font-family: 'Quicksand';
+}
+.h1-home{
+  font-size: 70px;
+}
+.img-height{
+  height: 200px;
+  width: auto;
+}
